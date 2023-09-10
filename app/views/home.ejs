@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biblioteca de Vídeos Musicais</title>
+    <link rel="stylesheet" href="../../styles/styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="/cadastroVideo">Cadastrar Vídeo</a></li>
+                <li><a href="/editarVideo">Editar Vídeo</a></li>
+                <li><a href="/cadastroUsuario">Cadastre-se</a></li>
+                <li><a href="/login">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+    <h1><center>Biblioteca de Vídeos Musicais</center></h1>
+    <section>
+
+        <% if (videos && videos.length) { %>
+            <% for (let i = 0; i < videos.length; i++) { %>
+                <div>
+                    <h3><%= videos[i].musica %></h3>
+                    <h3><%= videos[i].artista %></h3>
+                    <h3><%= videos[i].ano %></h3>
+                    <iframe width="560" height="315" src="<%= videos[i].url %>" frameborder="0" allowfullscreen></iframe>
+    
+                    <hr>
+                </div>
+            <% } %>
+        <% } else { %>
+            <p>Nenhum vídeo encontrado.</p>
+        <% } %>
+        </section>
+</body>
+</html>
