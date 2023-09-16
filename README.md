@@ -5,6 +5,11 @@ projeto é o desenvolvimento de um sistema web com operações de leitura, grava
 exclusão em um banco de dados.
 A tecnologia utilizada para o desenvolvimento do projeto deve ser o Nodejs para o backend. 
 
+A aplicação web MusicRepo tem como objetivo ser um repositório de links de videoclips público, 
+oferecendo via registro e autenticação a possibilidade de contribuição no cadastro de links.
+MusicRepo possui um acesso administrador que possibilita o cadastro, edição e exclusão de
+usuários e links.
+
 ## Funcionalidades que devem existir no sistema
 > A interface para utilização do sistema deve ser um site Web ou alguma ferramenta que faça
 requests http.
