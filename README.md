@@ -39,7 +39,7 @@ e url.
         </sub>
       </a>
        <td align="center">
-      <a href="#">
+      <a href="https://github.com/maynahelena">
         <img src="https://avatars.githubusercontent.com/u/70771139?v=4" width="200px;"/><br>
         <sub>
           <b>Mayna Azevedo</b>
