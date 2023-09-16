@@ -40,9 +40,9 @@ e url.
       </a>
        <td align="center">
       <a href="#">
-        <img src="https://avatars.githubusercontent.com/u/79526125?s=400&u=0d2c7957a6bc641bfea2320b04c455d8a7bd498a&v=4" width="200px;"/><br>
+        <img src="https://avatars.githubusercontent.com/u/70771139?v=4" width="200px;"/><br>
         <sub>
-          <b>Lucas Paduam</b>
+          <b>Mayna Azevedo</b>
         </sub>
       </a>
 </table>
