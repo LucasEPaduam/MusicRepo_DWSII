@@ -42,7 +42,7 @@ e url.
 <table>
   <tr>
     <td align="center">
-      <a href="https://github.com/LucasEPaduam">
+      <a href="https://lucasepaduam.github.io/MeuPortifolio/">
         <img src="https://avatars.githubusercontent.com/u/79526125?s=400&u=0d2c7957a6bc641bfea2320b04c455d8a7bd498a&v=4" width="200px;"/><br>
         <sub>
           <b>Lucas Paduam</b>
