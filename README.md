@@ -13,19 +13,19 @@ usuários e links.
 ## Funcionalidades que devem existir no sistema
 > A interface para utilização do sistema deve ser um site Web ou alguma ferramenta que faça
 requests http.
-###
+|
 > O sistema deve ter acesso a um banco de dados para operações de gravação, leitura,
 alteração e exclusão de dados.
-###
+|
 > O sistema deve possuir níveis de acesso através de autenticação.
-###
+|
 > Para os dados, que serão gerenciados pelo sistema, deve existir algum tipo de validação para
 evitar armazenamento de dados errados ou inconsistentes.
-###
+|
 > Toda vez que o dado não estiver de acordo com os critérios uma mensagem deve ser exibida
 alertado o usuário sobre tal fato. Devem existir ao menos esses tipos de dados: Data, texto, numérico
 e url.
-###
+|
 > O sistema deve ser hospedado em algum provedor. 
 
 ## Tecnologias Utilizadas
