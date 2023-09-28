@@ -1,16 +1,17 @@
-
-
-
-
 ### BANCO DE DADOS
 create database musicrepo;
 use musicrepo;
+drop table videocadastrado;
+drop table users;
 
+select * from videocadastrado;
 
-Tabela videocadastrado, com a seguinte estrutura: artista varchar(50), musica varchar(50), ano int, categoria varchar(50), url varchar(250), id_usuario int (chave estrangeira), id_musica (chave primaria) 
+###Tabela videocadastrado, com a seguinte estrutura: artista varchar(50), musica varchar(50), ano int, categoria varchar(50), url varchar(250), id_usuario int (chave estrangeira), id_musica (chave primaria) 
 
 CREATE TABLE `musicrepo`.`videocadastrado` (  `id_musica` INT NOT NULL AUTO_INCREMENT,   `artista` VARCHAR(50) NOT NULL, `musica` VARCHAR(50), `ano` INT NOT NULL,  `categoria` VARCHAR(50), `url` VARCHAR(250) NOT NULL, `id_usuario` INT, `created_at` TIMESTAMP default current_timestamp,   PRIMARY KEY (`id_musica`));
+CREATE TABLE `musicrepo`.`users` (  `id_usuario` INT NOT NULL AUTO_INCREMENT,   `nome` VARCHAR(50) NOT NULL, `email` VARCHAR(50) NOT NULL, `password` VARCHAR(50) NOT NULL, `created_at` TIMESTAMP default current_timestamp,   PRIMARY KEY (`id_usuario`));
 
-De inicio, não estamos adicionando id_usuario. 
-insert into videocadastrado (artista, musica, ano, categoria, url) values("Queen", "Don't Stop Me Now", "1979", "Rock",  "https://www.youtube.com/embed/HgzGwKwLmgM");
-insert into videocadastrado (artista, musica, ano, categoria, url) values("Queen", "Bohemian Rhapsody", "1975", "Rock",  "https://www.youtube.com/embed/fJ9rUzIMcZQ");
+
+###id_usuario inserido. 
+insert into videocadastrado (artista, musica, ano, categoria, id_usuario, url) values("Queen", "Don't Stop Me Now", "1979", "Rock", 1, "https://www.youtube.com/embed/HgzGwKwLmgM");
+insert into videocadastrado (artista, musica, ano, categoria, id_usuario, url) values("Queen", "Bohemian Rhapsody", "1975", "Rock", 1, "https://www.youtube.com/embed/fJ9rUzIMcZQ");
