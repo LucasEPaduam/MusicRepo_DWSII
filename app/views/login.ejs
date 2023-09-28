@@ -4,31 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tela de Login</title>
-    <link rel="stylesheet" href="../../styles/styles.css">
+    <link rel="stylesheet" type="text/css" href="styles.css" />
 </head>
 <body>
-    <header>
-        <nav>
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Favoritos</a></li>
-                <li><a href="/login">Login</a></li>
-            </ul>
-        </nav>
-    </header>
+    <nav class="navbar">
+        <div class='max-width'>
+           <div class="logo">MusicRepo<span>
+               <h1>Biblioteca de Vídeos Musicais</h1>
+           </span>
+           </div>
+           <ul class='menu'>
+               <li><a href="/" class="menu-btn"><span>Home</span></a></li>
+           </ul>
+        </div>
+       </nav>       
     <div>
         <h2>Login</h2>
-        <form action="#" method="post">
-            <div class="form-group">
-                <label for="username">Nome de Usuário:</label>
-                <input type="text" id="username" name="username" required>
-            </div>
-            <div class="form-group">
-                <label for="password">Senha:</label>
-                <input type="password" id="password" name="password" required>
-            </div>
-            <button type="submit">Entrar</button>
-        </form>
+            <form action="/autenticar" method="post">
+                <label for="nome">Nome:</label>
+                <input type="text" name="nome" value= "<%= user.nome %>" placeholder="Digite o nome da usuário" >
+                <label for="nome">Password:</label>
+                <input type="text" name="password" value= "<%= user.password %>" placeholder="Digite o password" >
+                <input type="submit" value="enviar" class="button">
+            </form>
     </div>
 </body>
 </html>

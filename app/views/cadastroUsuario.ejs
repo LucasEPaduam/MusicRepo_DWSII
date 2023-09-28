@@ -4,27 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro de Usuário</title>
+    <link rel="stylesheet" type="text/css" href="styles.css" />
 </head>
 <body>
     <h1>Cadastro de Usuário</h1>
-    
-    <form action="processar_cadastro.php" method="post">
-        <div class="form-group">
-            <label for="nome">Nome:</label>
-            <input type="text" id="nome" name="nome" required>
+    <nav class="navbar">
+        <div class='max-width'>
+           <div class="logo">MusicRepo<span>
+               <h1>Biblioteca de Vídeos Musicais</h1>
+           </span>
+           </div>
+           <ul class='menu'>
+               <li><a href="/" class="menu-btn"><span>Home</span></a></li>
+           </ul>
         </div>
-        
-        <div class="form-group">
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
-        </div>
-        
-        <div class="form-group">
-            <label for="senha">Senha:</label>
-            <input type="password" id="senha" name="senha" required>
-        </div>
-        
-        <button type="submit">Cadastrar</button>
-    </form>
+       </nav>
+       <form action="/salvarUsuario" method="post">
+        <label for="nome">Nome:</label>
+        <input type="text" name="nome" value= "<%= user.nome %>" placeholder="Digite o nome da usuário" >
+        <label for="nome">Email:</label>
+        <input type="text" name="email" value= "<%= user.email %>" placeholder="Digite seu email" >
+        <label for="nome">Password:</label>
+        <input type="text" name="password" value= "<%= user.password %>" placeholder="Digite o password" >
+        <input type="submit" value="Cadastrar" class="button">
+    </form>       
 </body>
 </html>
