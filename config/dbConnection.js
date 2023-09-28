@@ -3,7 +3,7 @@ const mysql = require('mysql2');
 const host = 'localhost';
 const database = 'musicrepo';
 const user = 'root';
-const password = 'Fifa$2Pince$#@';
+const password = '';
 
 module.exports = () => {
     console.log('entrou em login');
