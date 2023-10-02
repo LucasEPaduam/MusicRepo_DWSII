@@ -1,7 +1,13 @@
 const dbConnection = require('../../config/dbConnection');
+const { addVideo } = require('../models/cadastroVideo');
 
-module.exports.cadastroVideo = (app, req, res) =>{
-    console.log('Controller da cadastroVideo');
+
+module.exports.adicionaVideo = (app, req, res) => {
+    const video = req.body;
+    const userId = 3;
     dbConn = dbConnection();
-    res.render('cadastroVideo.ejs');  
-};
+        addVideo (video, userId, dbConn, (error, result) => {
+            res.redirect('/');
+        });
+    
+}

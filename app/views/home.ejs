@@ -24,22 +24,23 @@
          </div>
         </nav>       
     
-    <section class="home">
-        <% if (videos && videos.length) { %>
-            <% for (let i = 0; i < videos.length; i++) { %>
-                <div>
-                    <ul class="menu">
-                        <li><span><%= videos[i].musica %></span></li>
-                        <li><span><%= videos[i].artista %></span></li>
-                        <li><span><%= videos[i].ano %></span></li>
-                        <li><iframe width="560" height="315" src="<%= videos[i].url %>" frameborder="0" allowfullscreen></iframe></li>
+        <section class="home">
+            <% if (videos && videos.length) { %>
+                <% for (let i = 0; i < videos.length; i++) { %>
+                    <div class="video-container">
+                        <iframe width="800" height="100" src="<%= videos[i].url %>" frameborder="0" allowfullscreen></iframe>
                         <br><hr><br>
-                    </ul>                    
-                </div>
+                        <ul class="video-info">
+                            <li><span>Música: <%= videos[i].musica %></span></li>
+                            <li><span>Artista: <%= videos[i].artista %></span></li>
+                            <li><span>Ano: <%= videos[i].ano %></span></li>
+                        </ul>                       
+                    </div>
+                <% } %>
+            <% } else { %>
+                <p>Nenhum vídeo encontrado.</p>
             <% } %>
-        <% } else { %>
-            <p>Nenhum vídeo encontrado.</p>
-        <% } %>
         </section>
+        
 </body>
 </html>

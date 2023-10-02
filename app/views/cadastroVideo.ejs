@@ -6,9 +6,20 @@
     <title>Cadastro de Vídeo</title>
 </head>
 <body>
+    <section class="errors">
+        <% if(errors) { %>
+            <ul>
+                <% for(let i = 0; i < errors.length; i++){ %>
+                    <li>
+                        <%= errors[i].msg %>
+                    </li>
+                <% } %>
+            </ul>
+        <% } %>
+    </section> 
     <h1>Cadastro de Vídeo</h1>
     
-    <form action="" method="post">
+    <form action="/salvarVideo" method="post">
         <div>
             <label for="artista">Artista:</label>
             <input type="text" id="artista" name="artista" required>
