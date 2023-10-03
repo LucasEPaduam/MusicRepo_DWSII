@@ -3,9 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="styles.css" />
     <title>Cadastro de Vídeo</title>
 </head>
 <body>
+    <nav class="navbar">
+        <div class='max-width'>
+           <div class="logo">MusicRepo<span>
+               <h1>Biblioteca de Vídeos Musicais</h1>
+           </span>
+           </div>
+           <ul class='menu'>
+               <li><a href="/" class="menu-btn"><span>Home</span></a></li>
+           </ul>
+        </div>
+       </nav>    
     <section class="errors">
         <% if(errors) { %>
             <ul>
@@ -17,9 +29,11 @@
             </ul>
         <% } %>
     </section> 
-    <h1>Cadastro de Vídeo</h1>
+    <h1 class="cadvideotitle">Cadastro de Vídeo</h1>
+    <div class="cadastrovideocont">
     
-    <form action="/salvarVideo" method="post">
+    
+    <form  action="/salvarVideo" method="post">
         <div>
             <label for="artista">Artista:</label>
             <input type="text" id="artista" name="artista" required>
@@ -49,7 +63,8 @@
             <input type="url" id="url" name="url" required>
         </div>
         
-        <button type="submit">Cadastrar</button>
+        <button class="button" type="submit">Cadastrar</button>
     </form>
+</div>
 </body>
 </html>

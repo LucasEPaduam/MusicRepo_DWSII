@@ -17,16 +17,17 @@
                <li><a href="/" class="menu-btn"><span>Home</span></a></li>
            </ul>
         </div>
-       </nav>       
-    <div>
-        <h2>Login</h2>
-            <form action="/autenticar" method="post">
-                <label for="nome">Nome:</label>
-                <input type="text" name="nome" value= "<%= user.nome %>" placeholder="Digite o nome da usuário" >
-                <label for="nome">Password:</label>
-                <input type="text" name="password" value= "<%= user.password %>" placeholder="Digite o password" >
-                <input type="submit" value="enviar" class="button">
-            </form>
-    </div>
+        </div>
+     </nav> 
+        <h1 class="cadvideotitle">Login</h1>   
+        <div class="cadastrovideocont">        
+                <form action="/autenticar" method="post">
+                    <label for="nome">Nome:</label>
+                    <input type="text" name="nome" value= "<%= user.nome %>" placeholder="Digite o nome da usuário" >
+                    <label for="nome">Password:</label>
+                    <input type="text" name="password" value= "<%= user.password %>" placeholder="Digite o password" >
+                    <input type="submit" value="enviar" class="button">
+                </form>
+        </div>
 </body>
 </html>

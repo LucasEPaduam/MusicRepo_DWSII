@@ -3,11 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="styles.css" />
     <title>Editar Video</title>
 </head>
 <body>
-    <h1>Editar Vídeo</h1>
-    
+    <nav class="navbar">
+        <div class='max-width'>
+           <div class="logo">MusicRepo<span>
+               <h1>Biblioteca de Vídeos Musicais</h1>
+           </span>
+           </div>
+           <ul class='menu'>
+               <li><a href="/" class="menu-btn"><span>Home</span></a></li>
+           </ul>
+        </div>
+       </nav>    
+   
+    <h1 class="cadvideotitle">Editar Vídeo</h1>
+    <div class="cadastrovideocont">
     <form action="" method="post">
         <div>
             <label for="artista">Artista:</label>
@@ -38,7 +51,8 @@
             <input type="url" id="url" name="url" required>
         </div>
         
-        <button type="submit">Cadastrar</button>
+        <button class="button"type="submit">Editar</button>
     </form>
+</div>
 </body>
 </html>

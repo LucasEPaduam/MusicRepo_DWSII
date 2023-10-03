@@ -74,7 +74,6 @@ body {
 }
 
 
-/* menu button style */
 .menu-btn {
     color: #35fc03;
     font-size: 50px;
@@ -126,7 +125,7 @@ label{
 }
 
 .button{
-    display: inline-block;
+    display: flex;
     background: #000000;
     font-family: 'Josefin Sans', sans-serif;
     color: #ddd;
@@ -142,5 +141,25 @@ label{
 
 input{
     padding: 5px 10px;
+    margin-right: 20px;
+}
+
+select{
+    padding: 5px 10px;
+}
+
+.cadastrovideocont {
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.cadvideotitle{
+    color: #35fc03;
+    text-align: center;
+    font-size: 60px;
+    margin-top: 20px;
 }
 

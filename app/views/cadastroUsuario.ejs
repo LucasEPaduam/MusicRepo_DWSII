@@ -7,26 +7,30 @@
     <link rel="stylesheet" type="text/css" href="styles.css" />
 </head>
 <body>
-    <h1>Cadastro de Usuário</h1>
+   
     <nav class="navbar">
         <div class='max-width'>
-           <div class="logo">MusicRepo<span>
-               <h1>Biblioteca de Vídeos Musicais</h1>
-           </span>
+           <div class="logo">MusicRepo
+                <span>
+                    <h1>Biblioteca de Vídeos Musicais</h1>
+                </span>
            </div>
            <ul class='menu'>
                <li><a href="/" class="menu-btn"><span>Home</span></a></li>
            </ul>
         </div>
-       </nav>
-       <form action="/salvarUsuario" method="post">
-        <label for="nome">Nome:</label>
-        <input type="text" name="nome" value= "<%= user.nome %>" placeholder="Digite o nome da usuário" >
-        <label for="nome">Email:</label>
-        <input type="text" name="email" value= "<%= user.email %>" placeholder="Digite seu email" >
-        <label for="nome">Password:</label>
-        <input type="text" name="password" value= "<%= user.password %>" placeholder="Digite o password" >
-        <input type="submit" value="Cadastrar" class="button">
-    </form>       
+    </nav>
+       <h1 class="cadvideotitle">Cadastro de Usuário</h1>
+       <div class="cadastrovideocont">
+            <form action="/salvarUsuario" method="post">
+                <label for="nome">Nome:</label>
+                <input type="text" name="nome" value= "<%= user.nome %>" placeholder="Digite o nome da usuário" >
+                <label for="nome">Email:</label>
+                <input type="text" name="email" value= "<%= user.email %>" placeholder="Digite seu email" >
+                <label for="nome">Password:</label>
+                <input type="text" name="password" value= "<%= user.password %>" placeholder="Digite o password" >
+                <input type="submit" value="Cadastrar" class="button">
+            </form>
+        </div>      
 </body>
 </html>
