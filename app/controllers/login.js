@@ -8,10 +8,8 @@ module.exports.autenticar = (app, req, res) => {
         autentica (user, dbConn, (error, result) => {
             if(result.length > 0){
                 req.session.user = result[0].id_usuario;
-
                 res.redirect('/');
             }else{
-                req.session.user = false;
                 res.redirect('/login');
             }
         });
