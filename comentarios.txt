@@ -1,4 +1,5 @@
 ### BANCO DE DADOS
+mysql -u root -p
 create database musicrepo;
 use musicrepo;
 drop table videocadastrado;
