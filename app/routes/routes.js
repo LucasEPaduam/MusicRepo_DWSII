@@ -1,7 +1,7 @@
 const app = require('../../config/server');
 const {home} = require('../controllers/home');
 const {autenticar} = require('../controllers/login');
-const {editarVideo, updateVideo} = require('../controllers/editarVideo');
+const {selectEditarVideo, updateEditarVideo} = require('../controllers/editarVideo');
 const {adicionaVideo} = require('../controllers/cadastroVideo');
 const {adicionaUser} = require('../controllers/cadastroUsuario');
 const {userVideos} = require('../controllers/userVideos');
@@ -51,7 +51,7 @@ module.exports = {
         const validation = validationResult(req);
         if(validation.errors.length === 0){
             adicionaUser(app, req, res) 
-            console.log("AdicionaUser Route REQ", req.body);
+            //console.log("AdicionaUser Route REQ", req.body);
         } else{
             const user = req.body;
             res.render('cadastroUsuario.ejs', {errors: validation.errors, user: user});
@@ -80,12 +80,6 @@ module.exports = {
         }                      
     });
     },
-    editarVideo: (app) =>{
-        app.get('/editarVideo', function(req,res){
-            const video = req.body;
-            editarVideo(app, req, res, video);
-        });
-    },
     cadastroVideo: (app) =>{
         app.get('/cadastroVideo', function(req,res){
             cadastroVideo(app, req,res);
@@ -96,22 +90,24 @@ module.exports = {
             userVideos(app, req,res);
         });
     },
-    updateVideo: (app) =>{
-        console.log('Routes updateVideo');
-        app.post('/updateVideo', 
-        [
-            check('artista').isLength({min:1}).withMessage('Artista deve ter no minimo 5 caracteres'),
-            check('musica').isLength({min:1}).withMessage('Música deve ter no minimo 5 caracteres'),
-            check('ano').isLength({min:4, max:4}).isNumeric().withMessage('Ano deve ser numerico'),
-        ], function(req, res){
-            const validacao = validationResult(req);
-            if(validacao.errors.length === 0){
-                console.log(req.body);
-                updateVideo(app, req, res, req.body); 
+    editarVideo: (app) =>{
+        app.get('/editarVideo', function(req,res){
+            const id_musica = parseInt(req.query.id_musica);
+            //console.log('ID do video:', id_musica)
+            selectEditarVideo(app, res, id_musica, (error, result) =>{
+                
+            });
+        });
+    },
+    update: (app) =>{
+        app.post('/update', function(req, res){
+            const validation = validationResult(req);
+            if(validation.errors.length === 0){
+                updateEditarVideo(app, req, res); 
             } else{
                 const video = req.body;
-                res.render('home.ejs', {errors: validacao.errors, video: video});
+                res.render('/', {errors: validation.errors, video: video});
             } 
         });
-    }
+    },
 }

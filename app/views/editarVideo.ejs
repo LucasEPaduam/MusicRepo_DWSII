@@ -21,7 +21,7 @@
    
     <h1 class="cadvideotitle">Editar Vídeo</h1>
     <div class="cadastrovideocont">
-    <form action="/updateVideo" method="post">
+    <form action="/update" method="post">
         <input type="text" name="id_musica" value= "<%= video[0].id_musica %>" style="display: none;"> 
         <div>
             <label for="artista">Artista:</label>
@@ -40,10 +40,10 @@
         
         <div>
             <label for="categoria">Categoria:</label>
-            <select id="categoria" name="categoria" value= "<%= video[0].categoria %>" required>
-                <option value="rock">Rock</option>
-                <option value="pop">Pop</option>
-                <option value="hip-hop">Hip-Hop</option>
+            <select id="categoria" name="categoria" required>
+                <option value="rock" <%= video[0].categoria === 'Rock' ? 'selected' : '' %>>Rock</option>
+                <option value="pop" <%= video[0].categoria === 'Pop' ? 'selected' : '' %>>Pop</option>
+                <option value="hip-hop" <%= video[0].categoria === 'Hip-Hop' ? 'selected' : '' %>>Hip-Hop</option>
             </select>
         </div>
         

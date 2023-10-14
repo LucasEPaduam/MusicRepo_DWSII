@@ -19,3 +19,5 @@ insert into videocadastrado (artista, musica, ano, categoria, id_usuario, url) v
 
 https://www.youtube.com/embed/fJ9rUzIMcZQ"
 Artista: AH RA; Musica: Take on Me; Ano: 1986; categoria: Rock; link: https://www.youtube.com/embed/djV11Xbc914
+Artista: Rihanna; Musica: Work; Ano: 2016; categoria: Rock; link: https://www.youtube.com/embed/HL1UzIK-flA
+Artista: Lady Gaga; Musica: Bad Romance; Ano: 2009; categoria: Rock; link: https://www.youtube.com/embed/qrO4YZeyl0I
