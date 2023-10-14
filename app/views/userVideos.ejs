@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biblioteca de Vídeos Musicais</title>
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+</head>
+<body>
+
+        <nav class="navbar">
+         <div class='max-width'>
+            <div class="logo">MusicRepo<span>
+                <h1>Biblioteca de Vídeos Musicais</h1>
+            </span>
+            </div>
+            <ul class='menu'>
+                <li><a href="/" class="menu-btn"><span>Home</span></a></li>
+                <li><a href="/cadastroVideo" class="menu-btn"><span>Cadastrar Vídeo</span></a></li>
+                <li><a href="/editarVideo" class="menu-btn"><span>Editar Vídeo</span></a></li>
+                <li><a href="/userVideos" class="menu-btn"><span>Seus Vídeos</span></a></li>
+                <li><a href="/cadastroUsuario" class="menu-btn"><span>Cadastre-se</span></a></li>
+                <li><a href="/login" class="menu-btn"><span>Login</span></a></li>
+            </ul>
+         </div>
+        </nav>       
+    
+        <section class="home">
+            <% if (videos && videos.length) { %>
+                <% for (let i = 0; i < videos.length; i++) { %>
+                    <div class="video-container">
+                        <iframe width="800" height="500" src="<%= videos[i].url %>" frameborder="0" allowfullscreen></iframe>
+                        <br><hr><br>
+                        <ul class="video-info">
+                            <li><span>Música: <%= videos[i].musica %></span></li>
+                            <li><span>Artista: <%= videos[i].artista %></span></li>
+                            <li><span>Ano: <%= videos[i].ano %></span></li>
+                            <li><a href="/editarVideo?id_musica=<%=videos[i].id_musica%>">Editar</a></li>
+                        </ul>                       
+                    </div>
+                <% } %>
+            <% } else { %>
+                <p>Nenhum vídeo encontrado.</p>
+            <% } %>
+        </section>
+        
+</body>
+</html>

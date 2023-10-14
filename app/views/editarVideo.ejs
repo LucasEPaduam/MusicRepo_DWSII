@@ -18,47 +18,29 @@
            </ul>
         </div>
        </nav>    
-
-
-       <section class="home">
-        <% if (videos && videos.length) { %>
-            <% for (let i = 0; i < videos.length; i++) { %>
-                <div class="video-container">
-                    <iframe width="800" height="500" src="<%= videos[i].url %>" frameborder="0" allowfullscreen></iframe>
-                    <br><hr><br>
-                    <ul class="video-info">
-                        <li><span>Música: <%= videos[i].musica %></span></li>
-                        <li><span>Artista: <%= videos[i].artista %></span></li>
-                        <li><span>Ano: <%= videos[i].ano %></span></li>
-                    </ul>                       
-                </div>
-            <% } %>
-        <% } else { %>
-            <p>Nenhum vídeo encontrado.</p>
-        <% } %>
-    </section>
    
     <h1 class="cadvideotitle">Editar Vídeo</h1>
     <div class="cadastrovideocont">
-    <form action="" method="post">
+    <form action="/updateVideo" method="post">
+        <input type="text" name="id_musica" value= "<%= video[0].id_musica %>" style="display: none;"> 
         <div>
             <label for="artista">Artista:</label>
-            <input type="text" id="artista" name="artista" required>
+            <input type="text" name="artista" value= "<%= video[0].artista %>" required>
         </div>
         
         <div>
             <label for="musica">Música:</label>
-            <input type="text" id="musica" name="musica" required>
+            <input type="text" id="musica" name="musica" value= "<%= video[0].musica %>" required>
         </div>
         
         <div>
             <label for="ano">Ano:</label>
-            <input type="number" id="ano" name="ano" required>
+            <input type="number" id="ano" name="ano" value= "<%= video[0].ano %>" required>
         </div>
         
         <div>
             <label for="categoria">Categoria:</label>
-            <select id="categoria" name="categoria" required>
+            <select id="categoria" name="categoria" value= "<%= video[0].categoria %>" required>
                 <option value="rock">Rock</option>
                 <option value="pop">Pop</option>
                 <option value="hip-hop">Hip-Hop</option>
@@ -67,10 +49,10 @@
         
         <div>
             <label for="url">URL do Vídeo:</label>
-            <input type="url" id="url" name="url" required>
+            <input type="url" id="url" name="url" value= "<%= video[0].url %>" required>
         </div>
         
-        <button class="button"type="submit">Editar</button>
+        <button class="button" type="submit">Editar</button>
     </form>
 </div>
 </body>

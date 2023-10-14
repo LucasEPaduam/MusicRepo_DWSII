@@ -19,8 +19,9 @@ routes.insertinguser(app);
 routes.salvarUser(app);
 routes.insertingvideo(router);
 routes.salvarvideo(router);
-
 routes.editarVideo(router);
+routes.userVideos(router);
+routes.updateVideo(router);
 
 
 app.use(router); 

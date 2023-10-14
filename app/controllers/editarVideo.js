@@ -1,12 +1,11 @@
 const dbConnection = require('../../config/dbConnection');
-const {getVideos} = require('../models/editarVideo');
+const {updateVideo} = require('../models/editarVideo');
 
-module.exports.editarVideo = (app, req, res) =>{
+module.exports.editarVideo = (app, req, res, video) =>{
     console.log('Controller da editarVideo');
-    const userId = req.session.user;
+    console.log(video);
     dbConn = dbConnection();
-    console.log(userId);
-    getVideos(dbConn, userId, (error, result) =>{
-        res.render('editarVideo.ejs', {videos: result});
+    updateVideo(dbConn, video, (error, result) =>{
+        res.render('editarVideo.ejs', {video: result});
     })
 };

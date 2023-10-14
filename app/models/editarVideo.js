@@ -1,6 +1,14 @@
 module.exports = {
-    getVideos: (dbConnection, userId, callBack) =>{
-        const videos = `select * from videocadastrado where id_usuario = "${userId}";`;
-        dbConnection.query(videos, callBack);
+    updateVideo: (dbConnection, video, callBack) =>{
+        console.log('Model do editarVideo');
+        if(video){
+            const video = `update videocadastrado set artista = "${video.artista}", musica = "${video.musica}", ano = "${video.ano}", categoria = "${video.categoria}", url = "${video.url}" where id_musica = "${video.id_musica}";`;
+            dbConnection.query(video, callBack);
+        }
+        else{
+            const errorMessage = "Erro ao editar o vídeo";
+            callBack(new Error(errorMessage), null);
+        }
+        
     }
 }
