@@ -28,13 +28,14 @@
             <% if (videos && videos.length) { %>
                 <% for (let i = 0; i < videos.length; i++) { %>
                     <div class="video-container">
-                        <iframe width="800" height="500" src="<%= videos[i].url %>" frameborder="0" allowfullscreen></iframe>
+                        <iframe width="800" height="100" src="<%= videos[i].url %>" frameborder="0" allowfullscreen></iframe>
                         <br><hr><br>
                         <ul class="video-info">
                             <li><span>Música: <%= videos[i].musica %></span></li>
                             <li><span>Artista: <%= videos[i].artista %></span></li>
                             <li><span>Ano: <%= videos[i].ano %></span></li>
                             <li><a href="/editarVideo?id_musica=<%=videos[i].id_musica%>">Editar</a></li>
+                            <li><a href="/excluirVideo?id_musica=<%=videos[i].id_musica%>">Excluir</a></li>
                         </ul>                       
                     </div>
                 <% } %>

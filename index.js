@@ -22,6 +22,8 @@ routes.salvarvideo(router);
 routes.editarVideo(router);
 routes.userVideos(router);
 routes.update(router);
+routes.excluirVideo(router);
+routes.delete(router);
 
 
 

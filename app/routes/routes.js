@@ -2,6 +2,7 @@ const app = require('../../config/server');
 const {home} = require('../controllers/home');
 const {autenticar} = require('../controllers/login');
 const {selectEditarVideo, updateEditarVideo} = require('../controllers/editarVideo');
+const {selectExcluirVideo, deleteExcluirVideo} = require('../controllers/excluirVideo');
 const {adicionaVideo} = require('../controllers/cadastroVideo');
 const {adicionaUser} = require('../controllers/cadastroUsuario');
 const {userVideos} = require('../controllers/userVideos');
@@ -104,6 +105,26 @@ module.exports = {
             const validation = validationResult(req);
             if(validation.errors.length === 0){
                 updateEditarVideo(app, req, res); 
+            } else{
+                const video = req.body;
+                res.render('/', {errors: validation.errors, video: video});
+            } 
+        });
+    },
+    excluirVideo: (app) =>{
+        app.get('/excluirVideo', function(req,res){
+            const id_musica = parseInt(req.query.id_musica);
+            //console.log('ID do video:', id_musica)
+            selectExcluirVideo(app, res, id_musica, (error, result) =>{
+                
+            });
+        });
+    },
+    delete: (app) =>{
+        app.post('/delete', function(req, res){
+            const validation = validationResult(req);
+            if(validation.errors.length === 0){
+                deleteExcluirVideo(app, req, res); 
             } else{
                 const video = req.body;
                 res.render('/', {errors: validation.errors, video: video});

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+    <title>Excluir Video</title>
+</head>
+<body>
+    <nav class="navbar">
+        <div class='max-width'>
+           <div class="logo">MusicRepo<span>
+               <h1>Biblioteca de Vídeos Musicais</h1>
+           </span>
+           </div>
+           <ul class='menu'>
+               <li><a href="/" class="menu-btn"><span>Home</span></a></li>
+           </ul>
+        </div>
+       </nav>    
+   
+    <h1 class="cadvideotitle">Excluir Vídeo</h1>
+    <div class="cadastrovideocont">
+    <form action="/delete" method="post">
+        <input type="text" name="id_musica" value= "<%= video[0].id_musica %>" style="display: none;"> 
+        <div>
+            <label for="artista">Artista:</label>
+            <input type="text" name="artista" value= "<%= video[0].artista %>" readonly>
+        </div>
+        
+        <div>
+            <label for="musica">Música:</label>
+            <input type="text" id="musica" name="musica" value= "<%= video[0].musica %>" readonly>
+        </div>
+        
+        <div>
+            <label for="ano">Ano:</label>
+            <input type="number" id="ano" name="ano" value= "<%= video[0].ano %>" readonly>
+        </div>
+        
+        <div>
+            <label for="categoria">Categoria:</label>
+            <select id="categoria" name="categoria" disabled>
+                <option value="rock" <%= video[0].categoria === 'Rock' ? 'selected' : '' %>>Rock</option>
+                <option value="pop" <%= video[0].categoria === 'Pop' ? 'selected' : '' %>>Pop</option>
+                <option value="hip-hop" <%= video[0].categoria === 'Hip-Hop' ? 'selected' : '' %>>Hip-Hop</option>
+            </select>
+        </div>
+        
+        <div>
+            <label for="url">URL do Vídeo:</label>
+            <input type="url" id="url" name="url" value= "<%= video[0].url %>" readonly>
+        </div>
+        
+        <button class="button" type="submit">Excluir</button>
+    </form>
+</div>
+</body>
+</html>
